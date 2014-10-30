@@ -1,0 +1,19 @@
+{
+    "name": "assert-generator",
+    "version": "0.1.0",
+    "description": "Simple helper to create custom assertions",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --ui bdd test.js"
+    },
+    "keywords": [
+        "assert",
+        "predicate",
+        "is"
+    ],
+    "author": "Łukasz Kużyński",
+    "license": "MIT",
+    "devDependencies": {
+        "mocha": "^2.0.1"
+    }
+}
