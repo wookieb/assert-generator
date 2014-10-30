@@ -10,9 +10,7 @@ npm install assert-generator
 ## Examples
 
 ```js
-
 var generateAssert = require('assert-generator');
-
 
 var assertIsDefined = generateAssert(function(value) { return typeof value !== 'undefined'; }, 'Value cannot be empty');
 
