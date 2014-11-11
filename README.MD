@@ -18,19 +18,21 @@ assertIsDefined(1);
 assertIsDefined(undefined); // Error: Value cannot be empty
 ```
 
-Works fantastic with http://landau.github.io/is/
+Works fantastic with https://github.com/wookieb/predicates
 
 ```js
+var is = require('predicates');
 var Planet = function() {};
 
-var assertPlanet = generateAssert(is.instance(Planet), 'Value must be an instance of Planet');
+var assertPlanet = generateAssert(is.instanceOf(Planet), 'Value must be an instance of Planet');
 
 assertPlanet(new Planet());
 assertPlanet({}); // Error: Value must be an instance of Planet
 
-var assertArrayOfPlanets = generateAssert(function(arr) {
-    return is.array(arr) && arr.every(is.instance(Planet));
-}, 'Array must contain planets only');
+var assertArrayOfPlanets = generateAssert(
+    is.arrayOf(is.instance(Planet)), 
+    'Array must contain planets only'
+);
 
 assertArrayOfPlanets([new Planet(), new Planet()]);
 assertArrayOfPlanets([new Planet(), {}]); // Array must contain planets only
